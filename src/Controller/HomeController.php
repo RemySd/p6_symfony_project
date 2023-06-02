@@ -38,10 +38,8 @@ class HomeController extends AbstractController
     }
 
     #[Route('/email')]
-    public function sendMail(MailerInterface $mailer, Request $request)
+    public function sendMail(MailerInterface $mailer, Request $request): void
     {
-        // ...
-
         $mail = (new TemplatedEmail())
             ->from(new Address('expediteur@demo.test', 'Mon nom'))
             ->to('melanie.dussenne@gmail.com')
